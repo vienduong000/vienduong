@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Teddy</title>
+  <link rel="stylesheet" href="">
+    <style>
+    body{
+  padding: 0px;
+    margin: 0px;
+            }
+
+   
+    div.div1 img{
+  padding-left: 100px; 
+  float:left;
+  }
+    
+  div.menu{
+    font-size: 20px; 
+    width: 800px;
+    
+    margin: 5px auto;
+
+
+  }
+
+
+  ul.root > li{
+     list-style: none;
+     float: left;
+     position: relative;
+     list-style: none inside;
+
+  }
+    ul.root > li > a{
+     text-decoration: none;
+     padding: 0px 15px 0px 15px;
+     line-height: 40px;
+     display: block;
+
+      
+  }
+    ul.root > li > a:hover{
+      background: #FF99FF;
+      transition: ease-in 0.60s;
+
+
+  }
+
+  ul.submenu{
+    width: 250px;
+  
+    min-height: 100px;
+    display: none;
+    position: absolute; 
+
+  }
+  ul.submenu li{
+    list-style: none;
+
+  }
+  ul.submenu li a{
+    text-decoration: none;
+    display: block;
+    line-height: 30px;
+    
+  }
+    ul.submenu li a:hover{
+    background: #FF99FF;
+  }
+    ul.root > li:hover ul.submenu{
+      display: block;
+    }
+    .submenu ul li{
+      
+   
+      float: none;
+      display: inline-block;
+    }
+     .slide{
+      width: 100%; 
+     margin: auto; 
+     padding-top: 15px;  
+    height:500px; 
+    position: relative; 
+    } 
+     .slide a{
+      display: block; 
+      background-color:  #FF99FF; 
+       z-index: 1000; 
+       text-decoration: none;
+      text-align: center; 
+       color: #fff; 
+      line-height: 45px; 
+       font-weight: bold; 
+    }
+     .next{
+      right:  100px;
+      top: 300px;
+      position: absolute;
+      
+
+    }
+    .prev{
+      left:  100px;
+      top: 300px;
+      position: absolute;
+    }
+    .slide img{
+      position: absolute;
+
+    } 
+    .slide-item{
+      padding-left: 100px;
+    }
+
+    li{
+    z-index: 2;
+  }
+
+    div.giaohang li{
+      list-style: none;
+      
+
+    }
+
+
+
+
+    .footer{
+    width: 100%;
+    background-color: #EEEEEE; 
+    display: flex;
+    justify-content: space-between;
+    line-height: 30px;
+
+      }
+    .footer div ul li{
+   
+    list-style: none;
+     }
+
+
+    .footer div ul li:hover{
+    color: red;
+      }
+   
+    </style>
+
+</head>
+<body>
+
+  <div class="div1" >
+    </style>
+    <table>
+      <tr>
+      <td><img src="anhdau.jpg" width="80px" height="60px"></td>
+
+            <td><font color="#FF3366"><h2>LEE MIN HO</h2></font></td>
+            <td><a style="padding-left: 100px" > <input type="text" style="width: 500px" placeholder="Nhập thông tin cần tìm kiếm" > </a></td>
+            <!-- <td><a href="" ><img src="icontimkiem.png" alt="" style="width: 30px" ></a></td> -->
+            <td><img src="" alt="" style="width: 60px" ></td>
+            <td><font color="#FF3366"  ><h2 >SDT liên hệ 0397584418</h2></font></td>
+            </tr>
+    </table>
+  </div>
+    
+
+    <div class="menu">
+      <ul class="root" >
+        <li><a href="">TRANG CHỦ</a></li>
+                <li><a href="">FILM</a>
+                     <ul class="submenu">
+                      <li><a href="huyenthoaibienxanh.html">HUYỀN THOẠI BIỂN XANH</a></li>
+
+                      <li><a href="nguoithuake.html">NGƯỜI THỪA KẾ</a></li>
+                      
+                      <li><a href="vuonsaobang.html">VƯỜN SAO BĂNG</a></li>
+                    </ul>
+                </li>
+                <li><a href="">HÌNH ẢNH</a>
+                     
+                <li><a href="">TIỂU SỬ</a>
+                    <ul class="submenu">
+                      <li><a href="xuatthan.html">Xuất thân</a></li>
+                      <li><a href="sunghiep.html">Sự nghiệp</a></li>
+                      
+                    </ul>
+                </li>
+                <li><a href="">VIDEO</a>
+                    <ul class="submenu">
+                      <li><a href="">Hậu trường phim</a></li>
+                      <li><a href="">Hậu trường quảng cáo</a></li>
+                      
+                    </ul>
+                </li>
+      </ul>
+
+    
+
+    </div>
+    <div class="poster" style="margin-top: 30px;" >
+    <hr color="#FF3366" style="width: 100%">
+    <br>
+
+    <div class="slide" style="width: 100%" style="z-index: 1;">
+        <img src="a2.jpg" style="width: 1150px; height: 500px;" class="slide-item" number="0"  >
+      <img src="Banner2.jpg" style="display: none;width: 1150px; height: 500px;" class="slide-item" number="1"  >
+
+      <img src="anhban.jpg" style="display: none;width: 1150px; height: 500px;" class="slide-item" number="2"  >
+      
+      <a href="#" class="next" >></a>
+            <a href="#" class="prev"><</a>
+    </div>
+    <script src="jquery-3.5.0.js"></script>
+        <script>
+     $(()=>{
+
+      $('.next').click(function(){
+        changeImage('next');
+      })
+
+      $('.prev').click(function(){
+        changeImage('prev');
+      })
+
+     })
+
+     function changeImage(type){
+      let imgSelectVisible = $('img.slide-item:visible');
+      let imgVisible = parseInt(imgSelectVisible.attr('number'));
+      let eqNumber = type === 'next' ? imgVisible + 1 : imgVisible - 1;
+
+      if (eqNumber >= $('.slide-item').length){
+          eqNumber = 0
+      }
+  
+      $('img.slide-item').eq(eqNumber).fadeIn()
+
+      imgSelectVisible.fadeOut();
+      }
+       setInterval(changeImage,3000)
+      
+   </script>
+        
+    </div>
+ <div>
+            <ul style="width:1150px">
+                <li>"Lee Min Ho là một diễn viên, ca sĩ Hàn Quốc nổi tiếng và được coi là một trong những ngôi sao hàng đầu làn sóng Hallyu. Anh học chuyên ngành Điện ảnh và Nghệ thuật tại Đại học Konkuk và gia nhập công ty giải trí Starhaus Entertainment.Anh đã từng thực hiện một số vai nhỏ trên truyền hình trước khi đến với vai diễn được cho là bước đột phá quan trọng cho sự nghiệp của mình, Gu Jun Pyo trong bộ phim tuổi teen đình đám Vườn sao băng..</li>
+                
+            </ul>
+    </div>
+
+
+
+
+
+  <div class="div1">
+    </style>
+    <table>
+      <tr>
+      <td><img src="anh6.jpg" width="500px" height="400px"></td>
+        <td>Anh đã từng thực hiện một số vai nhỏ trên truyền hình trước khi đến với vai diễn được cho là bước đột phá quan trọng cho sự nghiệp của mình, Gu Jun Pyo trong bộ phim tuổi teen đình đám Vườn sao băng.Vai diễn này không chỉ mang lại cho anh một số giải thưởng danh giá, trong đó có giải thưởng Nam diễn viên mới xuất sắc nhất tại Baeksang Arts Awards lần thứ 45 mà còn giúp cho sự nổi tiếng của nam diễn viên bùng nổ ở khắp châu Á.Lee Min Ho tiếp tục đảm nhiệm vai chính trong một số bộ phim đáng chú ý như Huyền thoại biển xanh, Thợ săn thành phố và Những người thừa kế.Nam diễn viên điển trai cũng đã tạo được dấu ấn trên màn ảnh rộng với các bộ phim như Thợ săn tiền thưởng và Bụi đời Gangnam. Bên cạnh lĩnh vực diễn xuất, anh còn cho ra một số sản phẩm âm nhạc bao gồm hai album My everything và Song for you.</td>
+             
+            </tr>
+    </table>
+  </div>
+    
+
+
+
+
+    <hr color="#FF3366" style="width: 100%;">
+    <br>
+
+    <div class="footer" >
+        <div class="footer1">
+            <ul style="width:200px">
+                <li>Liên hệ quản lý</li>
+                <li>Viên Dương-Hà Nam-ViệtNam_0397584418</li>
+                
+            </ul>
+        </div>
+        <div>
+            <ul style="width:200px">
+                <li>VÉ CONCERT</li>
+                <li>Khán đài A</li>
+                <li>Khán đài B</li>
+                <li>Khán đài C</li>
+            </ul>
+        </div>
+        <div>
+            <ul style="width:150px">
+                <li>FANPAGE</li>
+                <li>Fan Lee Min Ho</li>
+                <li>Hội những người hâm mộ Lee Min Ho</li>
+                <li>Quân vương bất diệt Lee Min Ho</li>
+            </ul>  
+        </div>
+        <div>
+            <ul style="width:300px">
+                <li> Những lý do nên hâm mộ Lee Min Ho</li>
+                <li>Đẹp trai</li>
+                <li>Tài năng</li>
+                <li>Nhân hậu</li>
+                <li>Nhiều tiền</li>
+            </ul>
+        </div>
+       
+    
+</body>
+</html>
